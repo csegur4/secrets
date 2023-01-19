@@ -10,6 +10,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const PORT = process.env.PORT || 3030;
 
 // const bcrypt = require('bcrypt');
 // const saltRounds = 10;
@@ -172,6 +173,6 @@ app.post("/submit", function(req, res){
   });
 });
 
-app.listen(3000, function() {
-  console.log("Server has started successfully");
+app.listen(PORT, function() {
+  console.log(`Server started on port ${PORT}`);
 });
